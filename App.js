@@ -24,7 +24,7 @@ import Clipboard from '@react-native-clipboard/clipboard';
 
 let letters = 'abcdefghijklmnopqrstuvwxyz'
 let numbers = '123456789'
-let simbols = '!@#$%&*()_-+=[]{}.,'
+let simbols = '!@#$%&*()_-+=[]{}'
 
 const App = () => {
   const [password, setPassword] = useState('');
@@ -45,10 +45,10 @@ const App = () => {
     let simbolsArray = simbols.split('')
     let chacactersArray = [];
     if (isSortMinusculo) {
-      chacactersArray = [...chacactersArray, ...maiusculoLettersArray]
+      chacactersArray = [...chacactersArray, ...minusculoLettersArray]
     }
     if (isSortMaiusculo) {
-      chacactersArray = [...chacactersArray, ...minusculoLettersArray]
+      chacactersArray = [...chacactersArray, ...maiusculoLettersArray]
     }
     if (isSortNumber) {
       chacactersArray = [...chacactersArray, ...numbersArray]
