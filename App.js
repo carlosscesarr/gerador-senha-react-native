@@ -100,9 +100,9 @@ const App = () => {
         <View style={styles.containerRaio}>
           <Text style={styles.labelRadio}>Letras minúsculas</Text>
           <Switch
-            trackColor={{ false: '#767577', true: '#767577' }}
+            trackColor={{ false: '#ddd', true: '#9a989c' }}
             thumbColor={isSortMinusculo ? '#f0c330' : '#f4f3f4'}
-            ios_backgroundColor="#3e3e3e"
+            ios_backgroundColor="#767577"
             onValueChange={() => { setIsSortMinusculo(!isSortMinusculo) }}
             value={isSortMinusculo}
           />
@@ -110,9 +110,9 @@ const App = () => {
         <View style={styles.containerRaio}>
           <Text style={styles.labelRadio}>Letras maiúsculas</Text>
           <Switch
-            trackColor={{ false: '#767577', true: '#767577' }}
+            trackColor={{ false: '#ddd', true: '#9a989c' }}
             thumbColor={isSortMaiusculo ? '#f0c330' : '#f4f3f4'}
-            ios_backgroundColor="#3e3e3e"
+            ios_backgroundColor="#767577"
             onValueChange={() => { setIsSortMaiusculo(!isSortMaiusculo) }}
             value={isSortMaiusculo}
           />
@@ -120,7 +120,7 @@ const App = () => {
         <View style={styles.containerRaio}>
           <Text style={styles.labelRadio}>Símbolos</Text>
           <Switch
-            trackColor={{ false: '#767577', true: '#767577' }}
+            trackColor={{ false: '#ddd', true: '#9a989c' }}
             thumbColor={isSortSimbol ? '#f0c330' : '#f4f3f4'}
             ios_backgroundColor="#3e3e3e"
             onValueChange={() => { setIsSortSimbol(!isSortSimbol) }}
@@ -130,7 +130,7 @@ const App = () => {
         <View style={styles.containerRaio}>
           <Text style={styles.labelRadio}>Números</Text>
           <Switch
-            trackColor={{ false: '#767577', true: '#767577' }}
+            trackColor={{ false: '#ddd', true: '#9a989c' }}
             thumbColor={isSortNumber ? '#f0c330' : '#f4f3f4'}
             ios_backgroundColor="#3e3e3e"
             onValueChange={() => { setIsSortNumber(!isSortNumber) }}
