@@ -33,7 +33,7 @@ This project was developed using the following technologies:
 - [Javascript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
 
 ## 🔥 Preview
-<img alt="Gerador Senha" src="https://www.mediafire.com/convkey/a7f6/4s14nc7dl3l60jbzg.jpg" width="200px">
+<img alt="Gerador Senha" src="https://www.mediafire.com/view/nhqi5qv0ha6e19f/photo_2021-07-07_12-31-31.jpg" width="200px">
 
 ## 🚀 Getting started
 
