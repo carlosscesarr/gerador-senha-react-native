@@ -16,7 +16,6 @@ import {
   StatusBar,
   ToastAndroid,
   Image,
-  Alert,
   TouchableOpacity,
   TouchableHighlight,
   Switch,
