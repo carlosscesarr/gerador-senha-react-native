@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -14,7 +14,9 @@ import {
   View,
   Text,
   StatusBar,
+  ToastAndroid,
   Image,
+  Alert,
   TouchableOpacity,
   TouchableHighlight,
   Switch,
@@ -39,6 +41,10 @@ const App = () => {
 
   function copyToClipboard() {
     Clipboard.setString(password);
+    ToastAndroid.show(
+      'Copiado!',
+      ToastAndroid.SHORT
+    );
   }
 
   function generatePassword() {
@@ -73,7 +79,11 @@ const App = () => {
   }
 
   function shuffle(o) {
-    for (var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+    for (
+      var j, x, i = o.length;
+      i;
+      j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x
+    );
     return o;
   }
 
@@ -106,43 +116,50 @@ const App = () => {
           <View style={styles.containerRadio}>
             <Text style={styles.labelRadio}>Letras minúsculas</Text>
             <Switch
-              trackColor={{ false: '#ddd', true: '#f0cc00' }}
+              trackColor={{false: '#ddd', true: '#f0cc00'}}
               thumbColor={isSortMinusculo ? '#f0c330' : '#f4f3f4'}
               ios_backgroundColor="#767577"
-              onValueChange={() => { setIsSortMinusculo(!isSortMinusculo) }}
+              onValueChange={() => {
+                setIsSortMinusculo(!isSortMinusculo);
+              }}
               value={isSortMinusculo}
             />
           </View>
           <View style={styles.containerRadio}>
             <Text style={styles.labelRadio}>Letras maiúsculas</Text>
             <Switch
-              trackColor={{ false: '#ddd', true: '#f0cc00' }}
+              trackColor={{false: '#ddd', true: '#f0cc00'}}
               thumbColor={isSortMaiusculo ? '#f0c330' : '#f4f3f4'}
               ios_backgroundColor="#767577"
-              onValueChange={() => { setIsSortMaiusculo(!isSortMaiusculo) }}
+              onValueChange={() => {
+                setIsSortMaiusculo(!isSortMaiusculo);
+              }}
               value={isSortMaiusculo}
             />
           </View>
           <View style={styles.containerRadio}>
             <Text style={styles.labelRadio}>Números</Text>
             <Switch
-              trackColor={{ false: '#ddd', true: '#f0cc00' }}
+              trackColor={{false: '#ddd', true: '#f0cc00'}}
               thumbColor={isSortNumber ? '#f0c330' : '#f4f3f4'}
               ios_backgroundColor="#3e3e3e"
-              onValueChange={() => { setIsSortNumber(!isSortNumber) }}
+              onValueChange={() => {
+                setIsSortNumber(!isSortNumber);
+              }}
               value={isSortNumber}
             />
           </View>
           <View style={styles.containerRadio}>
-            
-              <Text style={styles.labelRadio}>Símbolos</Text>
-              <Switch
-                trackColor={{ false: '#ddd', true: '#f0cc00' }}
-                thumbColor={isSortSimbol ? '#f0c330' : '#f4f3f4'}
-                ios_backgroundColor="#3e3e3e"
-                onValueChange={() => { setIsSortSimbol(!isSortSimbol) }}
-                value={isSortSimbol}
-              />
+            <Text style={styles.labelRadio}>Símbolos</Text>
+            <Switch
+              trackColor={{false: '#ddd', true: '#f0cc00'}}
+              thumbColor={isSortSimbol ? '#f0c330' : '#f4f3f4'}
+              ios_backgroundColor="#3e3e3e"
+              onValueChange={() => {
+                setIsSortSimbol(!isSortSimbol);
+              }}
+              value={isSortSimbol}
+            />
           </View>
 
           {password !== '' && (
@@ -157,10 +174,12 @@ const App = () => {
                   flexDirection: 'row',
                   alignItems: 'center',
                 }}>
-                <View style={{ flex: 1 }}>
+                <View style={{flex: 1}}>
                   <Text style={styles.textPassword}>{password}</Text>
                 </View>
-                <TouchableOpacity>
+                <TouchableOpacity
+                  onPress={copyToClipboard}
+                  >
                   <Image
                     style={styles.copyImagePassword}
                     source={require('./src/assets/copy.png')}
